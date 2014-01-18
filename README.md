@@ -8,7 +8,7 @@ Build and run:
 <pre>
 git clone https://github.com/tegansnyder/docker-mysql-master-slave.git
 cd docker-mysql-master-slave
-sudo docker build -t ydocker-mysql .
+sudo docker build -t docker-mysql .
 sudo setup.sh
 </pre>
 
