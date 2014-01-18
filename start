@@ -1,0 +1,7 @@
+#!/bin/sh
+
+/usr/bin/mysqld_safe &
+
+cat /mysql/mysql.commands | mysql
+
+tail -f /var/log/mysql.log /var/log/mysql.err
