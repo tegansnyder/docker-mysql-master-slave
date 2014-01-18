@@ -1,6 +1,6 @@
 # Credits: Paul Czarkowski /paulczar/docker-mysql repo paul@paulcz.net
 
-FROM ubuntu:12.04
+FROM ubuntu
 MAINTAINER Tegan Snyder "tsnyder@tegdesign.com"
 
 RUN apt-get update
