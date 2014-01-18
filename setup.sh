@@ -51,14 +51,14 @@ echo "* Start Slave on both Servers"
 mysql -uroot -proot -h $MYSQL01_IP -AN -e "start slave;"
 mysql -uroot -proot -h $MYSQL02_IP -AN -e "start slave;"
 
-echo "* Create database 'wordpress' on MySQL01"
+echo "* Create database 'mydata' on MySQL01"
 
-mysql -uroot -proot -h $MYSQL01_IP -e "create database wordpress;"
+mysql -uroot -proot -h $MYSQL01_IP -e "create database mydata;"
 
-echo "* Sleep 2 seconds, then check that database 'wordpress' exists on MySQL02"
+echo "* Sleep 2 seconds, then check that database 'mydata' exists on MySQL02"
 
 sleep 2
-mysql -uroot -proot -h $MYSQL02_IP -e "show databases; \G" | grep wordpress
+mysql -uroot -proot -h $MYSQL02_IP -e "show databases; \G" | grep mydata
 
 
 echo "MySQL servers created!"
