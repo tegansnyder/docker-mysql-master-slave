@@ -8,12 +8,12 @@ echo "-----------------"
 echo "* Create MySQL01"
 
 MYSQL01=$(docker run -d docker-mysql mysqld_safe --server-id=1 --log-bin=mysql-bin --log-slave-updates=1)
-MYSQL01_IP=$(docker inspect $MYSQL01 | grep IPAd | awk -F'"' '{print $4}')
+MYSQL01_IP=$(docker inspect -f "{{.NetworkSettings.IPAddress}}" $MYSQL01)
 
 echo "* Create MySQL02"
 
 MYSQL02=$(docker run -d docker-mysql mysqld_safe --server-id=2 --log-bin=mysql-bin --log-slave-updates=1 --auto_increment_increment=2 --auto_increment_offset=2)
-MYSQL02_IP=$(docker inspect $MYSQL02 | grep IPAd | awk -F'"' '{print $4}')
+MYSQL02_IP=$(docker inspect -f "{{.NetworkSettings.IPAddress}}" $MYSQL02)
 
 echo "* Sleep for two seconds for servers to come online..."
 sleep 2
